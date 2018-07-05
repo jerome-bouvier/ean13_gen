@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ean13 generator">
+    <meta name="author" content="jeromebouvier">
+
+    <title>EAN Generator</title>
+
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">EAN13 For the people</h3>
+        </div>
+
+        <div class="jumbotron">
+            <h1>EAN13 Generator</h1>
+            <p class="lead">Press the bouton to generate a valid EAN13 code</p>
+        </div>
+        {% block content %}{% endblock %}
+        <div>
+            <br/>
+        </div>
+        <footer class="footer">
+            <p>&copy; Made with ❤ by
+                <a href="https://jeromebouvier.fr">jeromebouvier.fr</a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

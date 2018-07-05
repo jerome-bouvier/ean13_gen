@@ -1,4 +1,4 @@
-# ean13 generator
+# ean13 generator python script
 
 import numpy as np
 
