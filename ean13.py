@@ -5,6 +5,8 @@ import numpy as np
 
 def ean_gen():
     ean_base = np.random.randint(low=0, high=10,  size=12, dtype=np.int32)
+    ean = []
+    key = 0
     # variables temp pour calculer les valeurs pondérées
     pond = []
     for i in range(len(ean_base)):
@@ -15,7 +17,7 @@ def ean_gen():
 
     remainder = np.sum(pond) % 10
     if remainder == 0:
-        key = 0
+        pass
     else:
         key = 10 - remainder
 
