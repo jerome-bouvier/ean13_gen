@@ -21,7 +21,6 @@ def ean_gen():
     else:
         key = 10 - remainder
 
-    ean = []
     for n in ean_base:
         ean.append(ean_base[n])
 
