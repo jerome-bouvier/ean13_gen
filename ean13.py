@@ -19,7 +19,14 @@ def ean_gen():
     else:
         key = 10 - remainder
 
-    return str(ean_base) + str(key)
+    ean = []
+    for n in ean_base:
+        ean.append(ean_base[n])
+
+    ean.append(key)
+    return ean
 
 
-print(ean_gen())
+# fancy print
+for n in ean_gen():
+    print(n, end='')
