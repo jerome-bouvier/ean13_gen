@@ -3,35 +3,30 @@
 import numpy as np
 
 
-def random_ean():
-    # génération aléatoires des 12 premiers int
+def ean_gen():
     ean_base = np.random.randint(low=0, high=10,  size=12, dtype=np.int32)
-    for n in ean_base:
-        print(n, end='')
-    return ean_base
-
-
-def define_key(ean):
-    # variables temp pour calculer les valeurs pondérées
+    ean = []
+    key = 0
+    # variable temp pour calculer les valeurs pondérées
     pond = []
-    for i in range(len(ean)):
+    for i in range(len(ean_base)):
         if i % 2 == 0:
-            pond.append(base[i] * 1)
+            pond.append(ean_base[i] * 1)
         else:
-            pond.append(base[i] * 3)
+            pond.append(ean_base[i] * 3)
 
-    remainder = np.sum(pond) % 10
-    if remainder == 0:
-        key = 0
-        print(key)
+    if np.sum(pond) % 10 == 0:
+        pass
     else:
-        key = 10 - remainder
-        print(key)
-    return key
+        key = 10 - np.sum(pond) % 10
+
+    for n in ean_base:
+        ean.append(ean_base[n])
+
+    ean.append(key)
+    return ean
 
 
-choice = input("Generate ? or q to quit")
-while choice != 'q':
-    base = random_ean()
-    cle = define_key(base)
-    choice = input("Generate ? ")
+# fancy print
+for n in ean_gen():
+    print(n, end='')
