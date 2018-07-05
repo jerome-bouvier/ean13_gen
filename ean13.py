@@ -15,7 +15,7 @@ def ean_gen():
         else:
             pond.append(ean_base[i] * 3)
 
-    if (np.sum(pond) % 10) == 0:
+    if np.sum(pond) % 10 == 0:
         pass
     else:
         key = 10 - np.sum(pond) % 10
