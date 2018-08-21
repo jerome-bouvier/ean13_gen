@@ -4,7 +4,7 @@ import numpy as np
 
 
 def random_ean():
-    # génération aléatoires des 12 premiers int
+    # génération aléatoire des 12 premiers int
     ean_base = np.random.randint(low=0, high=10,  size=12, dtype=np.int32)
     for n in ean_base:
         print(n, end='')
